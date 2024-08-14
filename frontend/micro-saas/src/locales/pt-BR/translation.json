@@ -1,0 +1,23 @@
+{
+  "login": {
+    "get_started": "Iniciar",
+    "sign_in": "Entrar"
+  },
+  "welcome_message": "Seja bem-vindo ao seu Gerenciador de Conteúdo",
+  "form": {
+    "Username": "Nome de Usuário",
+    "Password": "Senha",
+    "Email": "E-mail",
+    "Address": "Endereço"
+  },
+  "sections": {
+    "Home": "Início",
+    "Dashboards": "Dashboards",
+    "Posts": "Posts",
+    "Analytics": "Analytics"
+  },
+  "Search": "Buscar",
+  "website": {
+    "Logo": "Logotipo"
+  }
+}

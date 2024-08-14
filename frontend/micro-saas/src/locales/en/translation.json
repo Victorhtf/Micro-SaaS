@@ -1,0 +1,23 @@
+{
+  "login": {
+    "get_started": "Get Started",
+    "sign_in": "Sign in"
+  },
+  "welcome_message": "Welcome to Your Marketing Content Manager",
+  "form": {
+    "Username": "Username",
+    "Password": "Password",
+    "Email": "E-mail",
+    "Address": "Address"
+  },
+  "sections": {
+    "Home": "Home",
+    "Dashboards": "Dashboards",
+    "Posts": "Posts",
+    "Analytics": "Analytics"
+  },
+  "Search": "Search",
+  "website": {
+    "Logo": "Logo"
+  }
+}

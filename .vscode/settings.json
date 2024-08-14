@@ -1,0 +1,34 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "frontend/micro-saas/tailwind.config.js": true,
+    "frontend/micro-saas/vite.config.js": true,
+    "frontend/micro-saas/postcss.config.js": true,
+    "frontend/micro-saas/eslint.config.js": true,
+    "frontend/micro-saas/node_modules": true,
+    "frontend/micro-saas/README.md": true,
+    "frontend/micro-saas/package.json": true,
+    "frontend/micro-saas/.gitignore": true,
+    "frontend/micro-saas/index.html": true,
+    "backend": true,
+    ".vscode": true
+  },
+  "hide-files.files": [
+    "frontend/micro-saas/tailwind.config.js",
+    "frontend/micro-saas/vite.config.js",
+    "frontend/micro-saas/postcss.config.js",
+    "frontend/micro-saas/eslint.config.js",
+    "frontend/micro-saas/node_modules",
+    "frontend/micro-saas/README.md",
+    "frontend/micro-saas/package.json",
+    "frontend/micro-saas/.gitignore",
+    "frontend/micro-saas/index.html",
+    "backend",
+    ".vscode"
+  ]
+}

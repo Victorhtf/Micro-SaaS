@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslationContext } from "../../../contexts/TranslationProvider";
+import { useTranslationContext } from "../../contexts/TranslationProvider.jsx";
 import { TextField, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
 

@@ -1,5 +1,6 @@
-import { useTranslationContext } from "../../../../contexts/TranslationProvider";
+import { IoMdNotifications } from "react-icons/io";
 import { Link } from "react-router-dom";
+import { useTranslationContext } from "../../../contexts/TranslationProvider";
 
 export default function Header() {
   const { t } = useTranslationContext();
@@ -72,6 +73,12 @@ export default function Header() {
 
           {/* User Image and Name */}
           <div className="col-span-2 flex items-center justify-center">
+            <div className="flex mx-4 items-center content-center">
+              <IoMdNotifications
+                size={25}
+                className="h-6 w-6 text-gray-600 hover:text-gray-700 transition duration-300"
+              />
+            </div>
             <img
               src="../../../profile.png"
               alt="Your Image"

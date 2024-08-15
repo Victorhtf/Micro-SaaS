@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import Header from "./Header.jsx/Header";
+import Header from "./components/Header.jsx";
 
-export default function AppLayout() {
+export default function Index() {
   return (
     <>
       <Header />

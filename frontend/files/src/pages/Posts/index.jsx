@@ -1,4 +1,4 @@
-import { useTranslationContext } from "../../../contexts/TranslationProvider";
+import { useTranslationContext } from "../../contexts/TranslationProvider";
 
 export default function Index() {
   const { t } = useTranslationContext();

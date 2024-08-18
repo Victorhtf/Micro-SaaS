@@ -1,1 +1,7 @@
 .vscode/*
+
+
+# Environment variables
+/frontend/files/.env
+/backend/files/.env
+/infra/.env

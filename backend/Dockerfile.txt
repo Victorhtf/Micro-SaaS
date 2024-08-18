@@ -1,0 +1,13 @@
+FROM node:22.6.0-bookworm
+WORKDIR /MicroSaaS
+
+# Copy files of the application
+COPY ./files/tsconfig.json ./files/package.json /
+
+# Install the dependencies in node_modules
+RUN npm install
+
+# Copy remaining files of the application
+COPY ./files/src /src
+
+CMD npm run dev

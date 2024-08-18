@@ -5,7 +5,18 @@
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
-    "**/Thumbs.db": true
+    "**/Thumbs.db": true,
+    "backend/files/.gitignore": true,
+    "backend/files/.eslintrc.js": true,
+    "backend/files/.prettierrc": true,
+    "backend/files/nest-cli.json": true,
+    "backend/files/README.md": true
   },
-  "hide-files.files": []
+  "hide-files.files": [
+    "backend/files/.gitignore",
+    "backend/files/.eslintrc.js",
+    "backend/files/.prettierrc",
+    "backend/files/nest-cli.json",
+    "backend/files/README.md"
+  ]
 }

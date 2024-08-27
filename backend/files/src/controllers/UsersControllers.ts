@@ -48,12 +48,13 @@ class Users {
 
   static async create(req: Request, res: Response) {
     try {
-      const { name, lastName, username, company, email } = req.body;
+      const { name, lastName, username, password, company, email } = req.body;
       const user = await prismaClient.user.create({
         data: {
           name,
           lastName,
           username,
+          password,
           company,
           email,
           isActive: true,

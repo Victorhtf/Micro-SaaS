@@ -1,32 +1,38 @@
-import express from 'express';
+import express, { Express } from 'express';
 import routes from './routes';
-import dotenv from 'dotenv';
+import Setup from './config/setup';
 
-dotenv.config();
+class App {
+  private express: Express;
 
-const app = express();
-
-const port = process.env.SERVER_PORT || 3008;
-
-app.use(express.json());
-app.use(routes);
-
-const startServer = async () => {
-  console.log('\n[SERVER] Server starting.');
-
-  if (!process.env.MONGODB_URI) {
-    console.log('MONGODB_URI its not defined in .env');
-    throw new Error();
+  constructor() {
+    this.express = express();
   }
 
-  try {
-    app.listen(port, () => {
+  start(): void {
+    Setup.load();
+    this.middlewares();
+    this.startRoutes();
+    this.serverListen();
+  }
+
+  // Set up the middlewares
+  private middlewares(): void {
+    this.express.use(express.json());
+  }
+
+  private startRoutes(): void {
+    this.express.use(routes);
+  }
+
+  private serverListen(): void {
+    const port = Setup.SERVER_PORT;
+
+    this.express.listen(port, () => {
+      console.log('\n[SERVER] Server starting.');
       console.log(`[SERVER] Server running on port ${port}.\n`);
     });
-  } catch (error) {
-    console.error('[MONGO_DB] Error connecting to MongoDB.', error);
-    process.exit(1);
   }
-};
+}
 
-startServer();
+new App().start();

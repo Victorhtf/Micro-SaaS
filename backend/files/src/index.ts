@@ -1,5 +1,8 @@
-import express, { Express } from 'express';
+import express, { Express, Request, Response, NextFunction } from 'express';
+import AuthController from './controllers/AuthControllers';
+import { AuthMiddleware } from './middlewares/authMiddleware';
 import routes from './routes';
+import cookieParser from 'cookie-parser';
 import Setup from './config/setup';
 
 class App {
@@ -18,7 +21,13 @@ class App {
 
   // Set up the middlewares
   private middlewares(): void {
+    const authMiddleware = new AuthMiddleware(AuthController);
+
     this.express.use(express.json());
+    this.express.use(cookieParser());
+    this.express.use((req: Request, res: Response, next: NextFunction) => {
+      authMiddleware.handle(req, res, next);
+    });
   }
 
   private startRoutes(): void {

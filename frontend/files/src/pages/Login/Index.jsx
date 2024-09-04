@@ -9,7 +9,6 @@ export default function Login() {
 
   return (
     <>
-      {console.log(i18n.language)}
       <div className="flex-1 flex items-center justify-center">
         <section className="bg-white p-6 rounded shadow-md w-full max-w-md">
           <h1 className="text-[#003366] text-2xl font-semibold mb-4">

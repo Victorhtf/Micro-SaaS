@@ -6,7 +6,7 @@ class Users {
   static async getAll(req: Request, res: Response) {
     try {
       const users = await prismaClient.user.findMany();
-
+      prismaClient.role;
       return res.status(200).json({
         message: 'Users listed successfully',
         data: users,
@@ -49,16 +49,17 @@ class Users {
 
   static async create(req: Request, res: Response) {
     try {
-      const { name, lastName, username, password, company, email } = req.body;
+      const { name, lastName, username, password, roles, company, email } =
+        req.body;
 
       const hashedPassword = await bcrypt.hash(password, 12);
-      console.log(hashedPassword);
       const user = await prismaClient.user.create({
         data: {
           name,
           lastName,
           username,
           password: hashedPassword,
+          roles,
           company,
           email,
           isActive: true,

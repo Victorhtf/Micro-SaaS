@@ -22,7 +22,8 @@ export class AuthMiddleware extends BaseMiddleware {
 
     // Verify if the route is on whitelist
     if (whitelistRoutes.includes(urlPath)) {
-      return next();
+      next();
+      return;
     }
 
     if (cookies && cookies.token) {
@@ -51,7 +52,7 @@ export class AuthMiddleware extends BaseMiddleware {
       }
 
       // Check for user permissions
-      const hasPermissions = this.AuthController.checkPermissions(
+      const hasPermissions = await this.AuthController.checkPermissions(
         token,
         urlPath,
         requestMethod

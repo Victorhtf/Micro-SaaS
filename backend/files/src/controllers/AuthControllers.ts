@@ -3,9 +3,9 @@ import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 import prismaClient from '../utils/PrismaClient';
+import { rolePermissions, Permission } from '../config/permissions';
 
 dotenv.config();
-
 class AuthController {
   async login(req: Request, res: Response) {
     const authHeader = req.headers.authorization;
@@ -40,7 +40,7 @@ class AuthController {
 
     // Generate JWT token
     const token = jwt.sign(
-      { user: { id: user.id, username: user.username } },
+      { user: { id: user.id, username: user.username, roles: user.roles } },
       process.env.JWT_SECRET!,
       { expiresIn: '1h' }
     );
@@ -77,18 +77,33 @@ class AuthController {
     }
   }
 
-  private checkPermissions(
+  async checkPermissions(
     token: string,
     urlPath: string,
     requestMethod: string
   ) {
-    const user = this.getCurrentUser(token);
+    const user = await this.getCurrentUser(token);
     if (!user) {
       return false;
     }
 
-    // Implement your permission logic here
-    return true;
+    const hasPermissions = user.roles.some((role: string) => {
+      const permissions = rolePermissions[role];
+
+      return permissions.some((permission) => {
+        if (
+          urlPath.startsWith(permission.path) &&
+          (Array.isArray(permission.method)
+            ? permission.method.includes(requestMethod)
+            : permission.method === requestMethod)
+        ) {
+          return true;
+        }
+        return false;
+      });
+    });
+
+    return hasPermissions;
   }
 }
 

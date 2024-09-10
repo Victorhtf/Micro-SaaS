@@ -32,9 +32,14 @@ class AuthController {
       where: { username },
     });
 
+    if (!user) {
+      return res.status(401).json({ message: 'Invalid credentials' });
+    }
+
     const matchPassword = await this.comparePassword(password, user.password);
 
-    if (!user || !matchPassword) {
+    if (!matchPassword) {
+      // Se a senha estiver incorreta, retorna erro
       return res.status(401).json({ message: 'Invalid credentials' });
     }
 

@@ -1,7 +1,9 @@
 {
   "login": {
     "get_started": "Get Started",
-    "sign_in": "Sign in"
+    "sign_in": "Sign in",
+    "success": "Successfully logged in",
+    "fail": "Login failed"
   },
   "welcome_message": "Welcome to Your Marketing Content Manager",
   "form": {

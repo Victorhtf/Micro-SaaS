@@ -1,7 +1,9 @@
 {
   "login": {
     "get_started": "Iniciar",
-    "sign_in": "Entrar"
+    "sign_in": "Entrar",
+    "success": "Log in realizado com sucesso",
+    "fail": "Falha no login"
   },
   "welcome_message": "Seja bem-vindo ao seu Gerenciador de Conteúdo",
   "form": {

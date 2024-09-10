@@ -15,12 +15,14 @@ import NotFoundLayout from "./pages/NotFound/NotFoundLayout.jsx";
 
 // Styles
 import "./index.css";
+import "react-toastify/dist/ReactToastify.css";
 
 // Components
 import { TranslationProvider } from "./contexts/TranslationProvider.jsx";
 
 // Import i18n setup configurtation
 import "./i18n/i18n";
+import { ToastContainer } from "react-toastify";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -38,6 +40,7 @@ createRoot(document.getElementById("root")).render(
           <Route path="*" element={<NotFoundLayout />}></Route>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </TranslationProvider>
   </StrictMode>
 );

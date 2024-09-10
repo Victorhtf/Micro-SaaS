@@ -1,3 +1,8 @@
-const whitelistRoutes = ['/auth/login', '/auth/register', '/api/status'];
+const whitelistRoutes = [
+  '/auth/login',
+  '/auth/register',
+  '/api/status',
+  '/api',
+];
 
 export default whitelistRoutes;

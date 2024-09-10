@@ -2,10 +2,30 @@ import React from "react";
 import { useTranslationContext } from "../../contexts/TranslationProvider.jsx";
 import { TextField, Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import axios from "axios";
 
 export default function Login() {
   const { t } = useTranslationContext();
   const { i18n } = useTranslation();
+
+  async function getUser() {
+    const apiUrl = import.meta.env.VITE_API_BASE_URL;
+
+    const username = "Usernasme";
+    const password = "Password";
+    const credentials = btoa(`${username}:${password}`);
+    const userData = await axios.post(
+      `${apiUrl}/auth/login`,
+      {},
+      {
+        headers: {
+          Authorization: `Basic ${credentials}`,
+        },
+      }
+    );
+
+    console.log(userData);
+  }
 
   return (
     <>
@@ -33,6 +53,9 @@ export default function Login() {
               color="primary"
               fullWidth
               className="mt-4"
+              onClick={() => {
+                getUser();
+              }}
             >
               {t("login.sign_in", { ns: "translation" })}
             </Button>

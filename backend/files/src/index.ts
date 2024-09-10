@@ -26,7 +26,7 @@ class App {
 
     this.express.use(express.json());
     this.express.use(cookieParser());
-    this.express.use(cors());
+    this.express.use(cors({ origin: process.env.FRONTEND_URI }));
     this.express.use((req: Request, res: Response, next: NextFunction) => {
       authMiddleware.handle(req, res, next);
     });

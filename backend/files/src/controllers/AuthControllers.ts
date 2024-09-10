@@ -28,7 +28,7 @@ class AuthController {
       .split(':');
 
     // Check credentials in the database
-    const user = await prismaClient.user.findUniqueOrThrow({
+    const user = await prismaClient.user.findUnique({
       where: { username },
     });
 

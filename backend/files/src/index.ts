@@ -4,6 +4,7 @@ import { AuthMiddleware } from './middlewares/authMiddleware';
 import routes from './routes';
 import cookieParser from 'cookie-parser';
 import Setup from './config/setup';
+import cors from 'cors';
 
 class App {
   private express: Express;
@@ -25,6 +26,7 @@ class App {
 
     this.express.use(express.json());
     this.express.use(cookieParser());
+    this.express.use(cors({ origin: process.env.FRONTEND_URI }));
     this.express.use((req: Request, res: Response, next: NextFunction) => {
       authMiddleware.handle(req, res, next);
     });

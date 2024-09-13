@@ -25,7 +25,7 @@ i18n
       caches: ["cookie"],
       lookupCookie: "i18nextLng",
       lookupLocalStorage: "i18nextLng",
-      lookupSessionStorage: "i18nextLng",
+      lookupLocalStorage: "i18nextLng",
     },
   });
 

@@ -1,25 +1,79 @@
 {
+  "auth": {
+    "unauthorized": "You have not permission to see this.",
+    "authorized": "Authorized",
+    "session_expired": "Your session has expired. Please log in again.",
+    "access_denied": "Access denied"
+  },
   "login": {
+    "title": "Sign In to Your Account",
     "get_started": "Get Started",
     "sign_in": "Sign in",
+    "register": "Register",
     "success": "Successfully logged in",
-    "fail": "Login failed"
+    "fail": "Login failed. Please check your credentials.",
+    "sign_out": "Sign Out",
+    "forgot_password": "Forgot your password?",
+    "remember_me": "Remember me"
   },
   "welcome_message": "Welcome to Your Marketing Content Manager",
   "form": {
-    "Username": "Username",
-    "Password": "Password",
-    "Email": "E-mail",
-    "Address": "Address"
+    "username": "Username",
+    "username_placeholder": "Username",
+    "password": "Password",
+    "password_placeholder": "Password",
+    "email": "E-mail",
+    "address": "Address",
+    "submit": "Submit",
+    "reset": "Reset",
+    "required_field": "This field is required",
+    "invalid_email": "Please enter a valid email address"
   },
   "sections": {
-    "Home": "Home",
-    "Dashboards": "Dashboards",
-    "Posts": "Posts",
-    "Analytics": "Analytics"
+    "home": "Home",
+    "dashboards": "Dashboards",
+    "posts": "Posts",
+    "analytics": "Analytics",
+    "settings": "Settings",
+    "profile": "Profile",
+    "help": "Help",
+    "log_out": "Log Out"
   },
-  "Search": "Search",
+  "search": {
+    "placeholder": "Search...",
+    "no_results": "No results found"
+  },
   "website": {
-    "Logo": "Logo"
+    "logo": "Logo",
+    "footer": {
+      "contact_us": "Contact Us",
+      "privacy_policy": "Privacy Policy",
+      "terms_of_service": "Terms of Service",
+      "all_rights_reserved": "All rights reserved"
+    }
+  },
+  "navigation": {
+    "back_to_home": "Back to Home",
+    "next": "Next",
+    "previous": "Previous"
+  },
+  "notifications": {
+    "new_message": "You have a new message",
+    "update_available": "An update is available",
+    "action_required": "Action required"
+  },
+  "profile": {
+    "image_alt": "Profile Picture",
+    "occupation": "Marketing Manager",
+    "my_profile": "My Profile",
+    "settings": "Settings",
+    "logout": "Logout"
+  },
+  "language": {
+    "portuguese": "Portuguese",
+    "english": "English"
+  },
+  "pages": {
+    "page_not_found": "Page not found"
   }
 }

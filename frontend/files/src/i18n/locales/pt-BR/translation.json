@@ -1,7 +1,12 @@
 {
+  "auth": {
+    "unauthorized": "Não autorizado",
+    "authorized": "Autorizado"
+  },
   "login": {
     "get_started": "Iniciar",
     "sign_in": "Entrar",
+    "register": "Registrar",
     "success": "Log in realizado com sucesso",
     "fail": "Falha no login"
   },

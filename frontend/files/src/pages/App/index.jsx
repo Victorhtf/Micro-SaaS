@@ -1,5 +1,5 @@
 import { Outlet } from "react-router-dom";
-import Header from "./components/Header.jsx";
+import Header from "../../components/Layout/Header/Header.jsx";
 
 export default function Index() {
   return (
@@ -11,7 +11,7 @@ export default function Index() {
         </main>
 
         <footer className="bg-[#003366] text-white text-center py-4">
-          <p>&copy; 2024 Your Company. All rights reserved.</p>
+          <p>&copy; 2024 My Company. All rights reserved.</p>
         </footer>
       </div>
     </>
